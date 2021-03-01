@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth']], function() {
+    
+   Route::get('/change-password','ProfileController@changePassword')->name('changePwd');
+    Route::patch('/update-password/{id}','ProfileController@updatePassword')->name('updatePwd');
+});
