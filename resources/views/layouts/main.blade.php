@@ -25,8 +25,10 @@
     {{-- <link rel="stylesheet" href="{{ asset('js/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}"> --}}
     <!-- iCheck -->
     <link rel="stylesheet" href="{{ asset('js/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    @yield('css')
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('js/dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom-style.css') }}">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -48,6 +50,7 @@
     {{-- <script src="{{ asset('js/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}" defer></script> --}}
     <!-- AdminLTE App -->
     <script src="{{ asset('js/dist/js/adminlte.min.js') }}" defer></script>
+    @yield('script')
 </body>
 
 </html>

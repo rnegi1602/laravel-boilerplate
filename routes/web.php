@@ -19,4 +19,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth']], function() {
+    
+    //Change Profile Details
+    Route::get('/profile','ProfileController@index')->name('profile');
+    Route::patch('/profile-detail/{id}','ProfileController@update')->name('updateProfile');
+    Route::patch('/user-thumb/{id}','ProfileController@updateThumb')->name('updateThumb');
+    
+    // Change Password
+    Route::get('/change-password','ProfileController@changePassword')->name('changePwd');
+    Route::patch('/update-password/{id}','ProfileController@updatePassword')->name('updatePwd');
+});
