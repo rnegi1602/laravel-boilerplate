@@ -46,7 +46,7 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Profile</p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="{{ route('changePwd') }}" class="nav-link {{ request()->is('change-password') ? 'active' : ''}}">
                                 <i class="fas fa-key nav-icon"></i>
